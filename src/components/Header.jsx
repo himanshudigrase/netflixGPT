@@ -1,21 +1,45 @@
-import React from 'react'
-import { getAuth, signOut } from "firebase/auth";
-import { auth } from '../utils/firebase';
+import React, { useEffect } from 'react'
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addUser, removeUser } from '../utils/userSlice';
+import { LOGO, USER_IMAGE } from '../utils/constants';
 
 
 const Header = () => {
   const auth = getAuth();
   const navigate = useNavigate();
   const user = useSelector(store => store.user);
+  const dispatch = useDispatch();
+  /*
+    As we only need to sign in user once and logout him once,
+    hence we are using useEffect
+  */
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User signs in
+        const {uid,email,password,displayName} = user;
+        dispatch(addUser({uid:uid, email:email, password: password, displayName: displayName}));
+        navigate('/browse')
+      } else {
+        // User is signed out
+        dispatch(removeUser());
+        navigate('/')
+      }
+    });
+
+    // Unsubscribe when the component unmounts
+    return () => unsubscribe();
+  }, []);
+
 
   return (
     <div className='absolute px-8 py-2 bg-gradient-to-b from-black z-50 w-screen flex justify-between'>
-        <img className='w-52' src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
+        <img className='w-52' src={LOGO}
         alt="logo"/>
       {user && <div className='flex p-4'> 
-        <img className='w-12 h-12' src="https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.webp" alt="userLogo" />
+        <img className='w-12 h-12' src={USER_IMAGE} alt="userLogo" />
         <button className='bg-red-600 text-white rounded-lg p-1 m-1' onClick={() =>{
          
           signOut(auth).then(() => {
