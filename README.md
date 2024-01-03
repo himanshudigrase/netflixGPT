@@ -12,6 +12,13 @@
  - Handled Redirection to proper pages if user logged in/ logged out
  - Unsubscribed when onAuthStateChange unmounts
  - Added constants file for Hardcoded values
+ - Get data from TMDB API for browse page
+ - Create movie slice and create custom hook for browse page
+ - MainContainer and SecondaryContainer
+ - Fetch Data for Trailer video
+ - Update store with Trailer video Data
+ - Created Custom Hook for BG Video
+ - Embed the youtube video and make it autoplay and mute
 
 # Features
   - Login/SIgnUp
