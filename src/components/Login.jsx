@@ -28,7 +28,7 @@ const Login = () => {
 
   const handleLogin = () => {
     const msg = checkValidData(email.current.value, password.current.value);
-    console.log(msg);
+   
     if (msg) return;
 
     // Sign Up
@@ -63,7 +63,6 @@ const Login = () => {
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMsg(errorCode + errorMessage);
-          navigate("/");
         });
     }
     // Sign In
@@ -80,7 +79,6 @@ const Login = () => {
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMsg(errorCode + errorMessage);
-          navigate("/");
         });
     }
   };

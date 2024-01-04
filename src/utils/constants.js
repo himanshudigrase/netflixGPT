@@ -11,3 +11,11 @@ export const options = {
   };
 
 export const MOVIES_API = 'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1';
+
+export const POPULAR_MOVIES_API = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1';
+
+export const TOP_RATED_MOVIES_API = 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1';
+
+export const UPCOMING_MOVIES_API = 'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1';
+
+export const IMAGE_PATH = 'https://image.tmdb.org/t/p/w500';

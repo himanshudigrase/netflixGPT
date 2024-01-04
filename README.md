@@ -19,6 +19,13 @@
  - Update store with Trailer video Data
  - Created Custom Hook for BG Video
  - Embed the youtube video and make it autoplay and mute
+ - Build Secondary Component
+ - Build Movie List
+ - build Movie Card
+ - TMDB Image CDN URL
+ - Made the Browser page amazing with Tailwind CSS
+ - usePopularMovies Custom hook
+
 
 # Features
   - Login/SIgnUp
