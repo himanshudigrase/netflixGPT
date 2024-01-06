@@ -19,3 +19,9 @@ export const TOP_RATED_MOVIES_API = 'https://api.themoviedb.org/3/movie/top_rate
 export const UPCOMING_MOVIES_API = 'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1';
 
 export const IMAGE_PATH = 'https://image.tmdb.org/t/p/w500';
+
+export const SUPPORTED_LANGUAGES = [
+  { identifier: "en", name: "English" },
+  { identifier: "hin", name: "Hindi" },
+  { identifier: "mar", name: "Marathi" },
+];
