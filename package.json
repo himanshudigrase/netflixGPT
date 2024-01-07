@@ -12,6 +12,7 @@
   "dependencies": {
     "firebase": "^10.7.1",
     "n": "^9.2.0",
+    "openai": "^4.24.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "stable": "^0.1.8"
