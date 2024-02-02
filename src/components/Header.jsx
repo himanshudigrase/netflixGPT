@@ -62,11 +62,11 @@ const Header = () => {
             </select>
           </div>
           <button onClick={() => dispatch(toggleSearch())}>
-            <img className="w-10 mr-4" src="/search.png" />
+            <img className="w-10 mr-4 mb-4" src="/search.png" />
           </button>
           <img className="hidden md:block w-12 h-12" src={USER_IMAGE} alt="userLogo" />
           <button
-            className="bg-red-600 text-white rounded-lg -py-4 ml-2"
+            className="bg-red-600 text-white rounded-lg h-12 px-2 ml-2"
             onClick={() => {
               signOut(auth)
                 .then(() => {

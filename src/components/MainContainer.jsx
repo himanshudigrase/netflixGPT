@@ -3,14 +3,13 @@ import { useSelector } from 'react-redux'
 import MovieTitle from './MovieTitle';
 import MovieBackground from './MovieBackground';
 
-const MainContainer = () => {
+const MainContainer = ({content}) => {
 
-  const movies = useSelector(store => store.movies?.nowPlayingMovies);
-  
+  const movies = useSelector(store => store.movies?.[content]);
+  console.log(movies);
   if(!movies)return;
   const {title,overview,id} = movies[0];
-  
-
+    
   return (
      <div className='pt-[30%] bg-black md:pt-0 w-screen'>
         <MovieTitle title={title} overview = {overview}/>

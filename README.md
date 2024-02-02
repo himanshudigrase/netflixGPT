@@ -27,6 +27,9 @@
  - usePopularMovies Custom hook
  - GPT Search Page, search form
  - Multi Language Support using redux
+ - OpenAI GPT key and fetching movies
+ - Memoization and .env setup
+ - 
 
 # Features
   - Login/SIgnUp

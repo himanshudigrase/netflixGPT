@@ -87,7 +87,7 @@ const Login = () => {
       <Header />
       <div className="absolute">
         <img
-        className="h-screen object-cover"
+        className="h-screen object-cover w-screen"
           src={BG_IMAGE}
           alt="bg-image"
         />
@@ -105,20 +105,20 @@ const Login = () => {
             ref={name}
             className="w-full p-4 my-4 bg-gray-700 rounded-lg"
             type="text"
-            placeholder="Enter your name"
+            placeholder="Name"
           />
         )}
         <input
           ref={email}
           className="w-full p-4 my-4 bg-gray-700 rounded-lg"
           type="text"
-          placeholder="Enter your email address"
+          placeholder="Email"
         />
         <input
           ref={password}
           className="w-full p-4 my-4 bg-gray-700 rounded-lg"
           type="password"
-          placeholder="Enter your password"
+          placeholder="Password"
         />
         <button
           onClick={handleLogin}
@@ -128,8 +128,11 @@ const Login = () => {
         </button>
         <p onClick={handleSignIn}>
           {isSignIn
-            ? "New to Netflix? Sign Up"
-            : "Already a user? Sign In here"}{" "}
+            ? <><span className="text-gray-500">New to Netflix?</span>
+            <a className=" hover: cursor-pointer hover: underline "> Sign Up now.</a></>
+            : <><span className="text-gray-500">Already a user?</span>
+            <a className=" hover: cursor-pointer hover: underline "> Sign In here.</a></>
+          } 
         </p>
       </form>
     </div>
